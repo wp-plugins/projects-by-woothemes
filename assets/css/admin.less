@@ -1,0 +1,95 @@
+// Imports
+@import url(mixins.less);
+
+// Icons
+#adminmenu #menu-posts-project .menu-icon-project div.wp-menu-image:before {
+	content: "\f322";
+}
+
+// Project Gallery
+#project-images {
+	.inside {
+		margin: 0;
+		padding: 0;
+		.add_project_images {
+			padding: 0 12px;
+		}
+		#project_images_container {
+			padding: 0 0 0 9px;
+			ul {
+				margin: 0;
+				padding: 0;
+				.clearfix;
+				li.image, li.add, li.projects-metabox-sortable-placeholder {
+					width: 80px;
+					float: left;
+					cursor: move;
+					margin: 9px 9px 0 0;
+					background: #f7f7f7;
+					.border_radius(2px);
+					position: relative;
+					background: #fff;
+					.border_radius(2px);
+					-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+					-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+					box-sizing: border-box;         /* Opera/IE 8+ */
+					img {
+						width: 100%;
+						height: auto;
+						display: block;
+						.transition;
+						.border_radius(2px);
+					}
+					&:hover {
+						img {
+							.opacity(0.75);
+						}
+					}
+				}
+				li.projects-metabox-sortable-placeholder {
+					border: 4px dashed #dddddd;
+					background: #f7f7f7;
+				}
+				ul.actions {
+					position: absolute;
+					top:4px;
+					right: 4px;
+					.transition;
+					.opacity(0);
+					li {
+						-webkit-border-radius: 100%;
+						border-radius: 100%;
+						float: right;
+						margin: 0 0 0 2px;
+						a {
+							width: 20px;
+							margin: 0;
+							height: 20px;
+							font-size: 16px;
+							display: block;
+							overflow: hidden;
+							color: #fff;
+							background:#000;
+							font-weight: 300;
+							line-height: 20px;
+							text-align: center;
+							.border_radius(2px);
+							text-decoration: none;
+							.transition;
+							&.delete {
+								background: @error;
+								&:hover {
+									background: #fff;
+									color: @error;
+								}
+							}
+						}
+					}
+				}
+				li:hover ul.actions {
+					.opacity(1);
+				}
+			}
+		}
+	}
+}
